@@ -1,18 +1,8 @@
-import {
-  Property,
-  Entity,
-  EntityRepositoryType,
-  Unique,
-  PrimaryKey,
-} from '@mikro-orm/core';
+import { Property, Entity, Unique, PrimaryKey } from '@mikro-orm/core';
 import { IsEmail } from 'class-validator';
-
-import { UserRepository } from '../user.repository';
 
 @Entity()
 export class User {
-  [EntityRepositoryType]?: UserRepository;
-
   @PrimaryKey()
   id!: number;
 

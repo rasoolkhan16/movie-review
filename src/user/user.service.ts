@@ -15,6 +15,7 @@ export class UserService {
   async create(createUserDto: CreateUserDto): Promise<User> {
     const email = createUserDto.email;
     const alreadyCreated = await this.userRepository.findOne({ email });
+
     if (!alreadyCreated) {
       const user = new User(
         createUserDto.name,
